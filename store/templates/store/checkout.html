@@ -1,0 +1,69 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box-element" id="form-wrapper">
+                <form id="form">
+                    <div class="user-info">
+                        <p>User Information:</p>
+                        <div class="form-group mb-3">
+							<input required class="form-control" type="text" name="name" placeholder="Full Name..">
+						</div>
+                        <div class="row">
+                            <div class="form-group col mb-3">
+                                <input required class="form-control" type="email" name="email" placeholder="Email..">
+                            </div>
+                            <div class="form-group col mb-3">
+                                <input required class="form-control" type="tel" name="phone" placeholder="Phone..">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shipping-info">
+                        <!-- <hr> -->
+                        <br>
+						<p>Shipping Information:</p>
+						<!-- <hr> -->
+						<div class="form-group mb-3">
+							<input class="form-control" type="text" name="address" placeholder="Address..">
+						</div>
+						<div class="row">
+                            <div class="form-group col mb-3">
+                                <input required class="form-control" type="text" name="city" placeholder="City..">
+                            </div>
+                            <div class="form-group col mb-3">
+                                <input required class="form-control" type="text" name="state" placeholder="State..">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Continue" id="forn-button" class="btn btn-success btn-block">
+                </form>
+            </div>
+            <div class="box-element hidden" id="payment-info">
+				<small>Paypal Options</small>
+			</div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="box-element">
+                <a  class="btn btn-outline-dark" href="{% url 'cart' %}">&lAarr; Back to Cart</a>
+				<hr>
+				<h5>Order Summary</h5>
+				<hr>
+				<div class="cart-row">
+					<div style="flex:2"><img class="row-image" src="{% static 'img/placeholder.png' %}"></div>
+					<div style="flex:2"><p>Product sdfsdf sdfsdf sdfsdfdfs sdfsdfs1</p></div>
+					<div style="flex:1"><p>₦1,500</p></div>
+					<div style="flex:1"><p>x2</p></div>
+				</div>
+                <hr>
+                <div style="display:flex; justify-content:space-between; padding:5px 10px;">
+                    <h6>Items:   2</h6>
+				    <h6>Total:   ₦1,500</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

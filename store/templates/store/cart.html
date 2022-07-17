@@ -1,0 +1,56 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="box-element">
+                <a href="{% url 'store' %}" class="btn btn-outline-dark"> &lAarr; Continue Shoping</a>
+                <br>
+                <br>
+                <div class="cart-row">
+                    <div style="flex: 2;"></div>
+                    <!-- <div style="flex: 1;"><strong>Product</strong></div> -->
+                    <div style="flex: 1;"><strong>Price</strong></div>
+                    <div style="flex: 1;"><strong>Quantity</strong></div>
+                    <div style="flex: 1;"><strong>Total</strong></div>
+                </div>
+                <div class="cart-row">
+                    <div id="prod" style="flex: 2;">
+                        <img src="{% static 'img/placeholder.png' %}" alt="product-image" class="row-image">
+                        <div style="word-break: break-all;white-space: normal;width:150px;padding:3px;">
+                            iPhone 6
+                        </div>
+                    </div>
+                    <!-- <div style="flex: 1;">Product</div> -->
+                    <div style="flex: 1;">₦1,500</div>
+                    <div style="flex: 1;">
+                        <p class="quantity">5</p>
+                        <div class="quantity">
+                            <img src="{% static 'img/arrow-up.png' %}" alt="arrow-up" class="chg-quantity">
+                            <img src="{% static 'img/arrow-down.png' %}" alt="arrow-down" class="chg-quantity">
+                        </div>
+                    </div>
+                    <div style="flex: 1;">₦1,500</div>
+                </div>
+            </div>
+            <br>
+
+            <div class="box-element">
+                <br>
+                <table class="table">
+                    <tr>
+                        <th><h5>Items: <strong>3</strong></h5></th>
+                        <th><h5>Total: <strong>₦1,500</strong></h5></th>
+                        <th>
+                            <a style="float: right; margin: 5px;" href="{% url 'checkout' %}" class="btn btn-success">Checkout</a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}

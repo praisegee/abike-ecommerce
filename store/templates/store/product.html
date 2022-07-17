@@ -1,0 +1,36 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="product-container">
+    <div style="background: #f4f4f4; padding:50px;" class="row">
+        <div class="col-md-6">
+            <img src="{{ product.imageURL }}" alt="{{ product.product_id }}" id="product-img">
+        </div>
+        <div class="col-md-6">
+            <div class="box-element">
+                <a href="{% url 'store' %}" class="btn btn-outline-dark"> &lAarr; Continue Shoping</a>
+                <hr>
+                <h3>{{ product.name | upper }}</h3>
+                <span>Product ID: </span><small>{{ product.product_id }}</small>
+                <hr>
+                <h4>₦{{ product.price | floatformat:2 }}</h4>
+                <hr>
+                <div class="quantity-btns">
+                    <label>Quantity: </label>
+                    <div class="wrap-btns">
+                        <button id="increase" class="q-btn">-</button>
+                        <div id="quantity-value">2</div>
+                        <button id="decrease" class="q-btn">+</button>
+                    </div>
+                </div><hr>
+                <a href="{% url 'cart' %}" class="btn btn-success">Buy Now</a>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
