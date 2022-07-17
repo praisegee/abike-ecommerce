@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*2w@_)z&p@wibga&k+hld&8)90%r!5$7c=e1vhc6%oo9mv8p&7
 # SECURITY WARNING: don't run with debug turned on in production!
 
 try:
-    import .local_settings
+    from . import local_settings
 except ImportError:
     DEBUG = False
     ALLOWED_HOSTS = ["abike-ecommerce.herokuapp.com", "127.0.0.1"]
@@ -123,6 +123,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = 'static/'
 
